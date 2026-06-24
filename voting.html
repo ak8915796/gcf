@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Checker</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(208, 209, 205);
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+        }
+
+        #result {
+            font-size: 24px;
+            color: rgb(43, 43, 105);
+            font-weight: bold;
+             width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid black;
+            background-color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Vote Checker</h2>
+    <p id="result"></p>
+
+    <script>
+        let num = prompt("Enter your age:");
+
+        if (num >= 18) {
+            document.getElementById("result").innerHTML = num + " you can vote";
+        } else {
+            document.getElementById("result").innerHTML = num + " you cannot vote";
+        }
+    </script>
+
+</body>
+</html>
