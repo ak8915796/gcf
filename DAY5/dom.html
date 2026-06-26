@@ -3,41 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>good morning everyone </title>
+    <title>Good Morning Everyone </title>
 </head>
 <body>
-    <h1 id="heading">Welcom to JAvascript DOM</h1>
+    <h1 id="heading">Welcome to JavaScript DOM</h1>
  
-       <p class="text">para1</p>   <p class="text">para 2 </p>   <p class="text">para3</p>
+    <p class="text">para1</p>   
+    <p class="text">para2</p>   
+    <p class="text">para3</p>
 
-       <h2>HTML</h2>
-       <h2>CSS</h2>
-       <h2>Javascript</h2>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>JavaScript</h2>
 
+    <input type="text" name="username" placeholder="Enter your name: ">
+    <br><br>
+    <button onclick="runDOM()">Run ALL DOM Methods</button>
+    <div class="box" id="output"></div>
 
-       <input type="text" name="username" placeholder="Enter your name: ">
-       <br>
-       <br>
-       <button onclick="runDOM()">Run ALL DOM Methods</button>
-       <div class="box" id="output"></div>
     <script>
-        // document.getElementById("demo").innerHTML = "Welcom to DOM";
-
-
         function runDOM(){
-//getElementById()
-       let headings = document.getElementById("heading");
-         heading.innerHTML="getElementById() Executed";
+            // getElementById()
+            let heading = document.getElementById("heading");
+            heading.innerHTML = "getElementById() Executed";
+            heading.style.color = "red";
 
-         heading.style.color = "red";
+            // getElementsByClassName()
+            let para = document.getElementsByClassName("text");
+            for(let i = 0; i < para.length; i++){
+                para[i].style.color = "blue";
+                para[i].style.fontSize = "25px";
+            }
 
-         let para = document.getElementByIdClassname("text");
-         for(let i = 0;i<para.length;i++);
-         para[i].style.color = "blue";
-         para[i].style.fontsize= "25px";
-
+            // getElementsByTagName()
+            let h2 = document.getElementsByTagName("h2");
+            for(let i = 0; i < h2.length; i++){
+                h2[i].style.background = "pink";
+                h2[i].innerHTML = (i+1) + ". " + h2[i].innerHTML;
+            }
         }
+
+        // getElementbyName()
+        let user=document.getElementsByName("username");
+
+        user[0].value="kunal"
+        user[0].style.color="red";
+
+        
     </script>
-    
 </body>
 </html>

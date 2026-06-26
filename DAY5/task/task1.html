@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart Optimizer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{background-color: rgb(15, 15, 53);
+        color:rgb(160, 100, 110);}
+        .item_box{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            padding: 15px;
+            gap: 10px;
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-top: 40px;
+        }
+        .cart:hover{background-color: blue;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center; padding-top: 1%;">Shopping Cart</h2>
+    
+<div style="text-align: center;" class="item_box">
+    <button onclick="addToCart('apple')">apple</button>
+    <button onclick="addToCart('banana')">banana</button>
+    <button onclick="addToCart('orange')">orange</button>
+    <button onclick="addToCart('pineapple')">pineapple</button>
+    <button onclick="addToCart('gauva')">gauva</button>
+    <button onclick="addToCart('Mango')">Mango</button>
+    <br>
+    <br>
+    <button onclick="clearCart()" style="background-color: rgb(255, 0, 0);" >Clear Cart</button>
+</div>
+
+<hr>
+<hr>
+    
+    <p><b>Raw Cart :</b> <span id="raw-cart"></span></p>
+    <hr><hr>
+    <p><b>Optimized Cart :</b> <span id="optimized-cart"></span></p>
+    <hr><hr>
+
+    <script>
+       
+        let cart = [];
+
+       
+        function optimizeCart(productIds) {
+            return [...new Set(productIds)];
+        }
+
+    
+        function addToCart(productId) {
+            cart.push(productId);
+            updateDisplay();
+        }
+
+    
+        function clearCart() {
+            cart = [];
+            updateDisplay();
+        }
+
+   
+        function updateDisplay() {
+            const uniqueCart = optimizeCart(cart);
+            
+        document.getElementById('raw-cart').innerHTML = cart.join(', ');
+            document.getElementById('optimized-cart').innerText = uniqueCart.join(', ');
+        }
+    </script>
+
+</body>
+</html>
