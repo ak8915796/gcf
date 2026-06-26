@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(241, 255, 255);
+            padding: 15px;
+            border-radius: 74%;
+            margin: 15px;
+            text-align: center;  
+        }
+
+
+       
+      </style>
+</head>
+<body>
+    <div class="div">
+    <h1>BOM - browser Object Model</h1>
+    <h2 id="output">output Here</h2>
+    <button onclick="showAlert()">onclick</button>
+    <button onclick="showPrompt()">click</button>
+    
+    <button onclick="showConfrim()">confrim</button>
+    <button onclick="openTap()">open</button>
+    <button onclick="timeoutDemo()">time</button>
+    <button onclick="intervalDemo()">date</button>
+    <button onclick="intervalID()">setTimeout</button>
+
+    </div>
+
+    <script>
+        //alert
+         function showAlert(){
+                window.alert("Hello programmer")
+            }
+            //prompt
+
+            function showPrompt(){
+                let name = window.prompt("Enter your no.");
+                document.getElementById("output").innerHTML = "abhishek ="+name;
+            }
+
+            // confrim
+            function showConfrim(){
+                let result = window.confirm("DO YOU want to confrim");
+                if(result){
+                    document.getElementById("output").innerHTML = " user clicked ok for that";
+                }
+                else{
+                    document.getElementById("output").innerHTML = " user clicked not for that";
+                }
+            }
+
+            //open
+            function openTap(){
+                window.open("https://www.instagram.com/?hl=en")
+            }
+
+            // timeout
+            function timeoutDemo(){
+                setTimeout(function(){
+
+                
+                document.getElementById("output").innerHTML = "message show after 3 sec"},3000);
+            
+        }
+        let intervalID;
+        function intervalDemo(){
+            intervalID = setInterval(function(){
+document.getElementById("output").innerHTML = new Date();
+            },1000)
+        }
+        // clear interval
+        function stopInterval(){
+            clearInterval(intervalID);
+            document.getElementById("output").innerHTML = "Interval stopped";
+        }
+
+        //location
+
+        
+
+
+    </script>
+    
+</body>
+</html>
