@@ -5,7 +5,7 @@ if(age>18){
 }
 
 
-// [f else
+// if else
     
     let a = 15;
     if(a>=18){

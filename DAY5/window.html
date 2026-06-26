@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showHistory()">History Length</button>
+<button onclick="goBack()">Back</button>
+<button onclick="goForward()">Forward</button>
+<button onclick="openPage()">Go (-1)</button>
+
+<p id="output"></p>
+
+    <script>
+        function showHistory(){
+            document.getElementById("output").innerHTML = "History Length : " +window.history.length; 
+
+        }
+        function goBack(){
+            window.history.back();
+        }
+        function goForward(){
+            window.history.forward();
+        }
+        function goPage(){
+            window.history.go(-1);
+            
+            //use history.go(1) for next page
+            //use history.go(-2) for go back two pages
+        }
+
+
+    </script>
+</body>
+</html>

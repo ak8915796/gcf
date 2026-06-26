@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+          background-color: #0b0b36;
+        }
+
+        .calculator {
+            background-color: #0f0f1a;
+            padding: 20px;
+            border-radius: 25px;
+         
+            width: 340px;
+        }
+
+        .display {
+            width: 100%;
+            height: 100px;
+            background-color: #1a1a2e;
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 2.5rem;
+            text-align: right;
+            padding: 20px;
+            outline: none;
+            pointer-events: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            padding: 20px;
+            border-radius: 15px;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Number buttons */
+        .btn-num {
+            background-color: #252538;
+            color: #fff;
+        }
+
+        .btn-num:hover {
+            background-color: #31314f;
+        }
+
+        /* Operator buttons (+, -, *, /) */
+        .btn-op {
+            background-color: #ff9f0a;
+            color: #fff;
+        }
+
+        .btn-op:hover {
+            background-color: #cc7f08;
+        }
+
+        /* Clear and Delete buttons */
+        .btn-util {
+            background-color: #a5a5a5;
+            color: #000;
+        }
+
+        .btn-util:hover {
+            background-color: #d4d4d4;
+        }
+
+        /* Equal button */
+        .btn-equal {
+            background-color: #ff9f0a;
+            color: #fff;
+            grid-column: span 2; /* Takes up two columns */
+        }
+
+        .btn-equal:hover {
+            background-color: #cc7f08;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <!-- Display Screen -->
+        <input type="text" class="display" id="screen" readonly placeholder="0">
+
+        <!-- Buttons Grid -->
+        <div class="buttons">
+            <button class="btn-util" onclick="clearScreen()">C</button>
+            <button class="btn-util" onclick="deleteLast()">DEL</button>
+            <button class="btn-op" onclick="appendValue('/')">/</button>
+            <button class="btn-op" onclick="appendValue('*')">*</button>
+
+            <button class="btn-num" onclick="appendValue('7')">7</button>
+            <button class="btn-num" onclick="appendValue('8')">8</button>
+            <button class="btn-num" onclick="appendValue('9')">9</button>
+            <button class="btn-op" onclick="appendValue('-')">-</button>
+
+
+            <button class="btn-num" onclick="appendValue('4')">4</button>
+            <button class="btn-num" onclick="appendValue('5')">5</button>
+            <button class="btn-num" onclick="appendValue('6')">6</button>
+            <button class="btn-op" onclick="appendValue('-')">-</button>
+
+            <button class="btn-num" onclick="appendValue('1')">1</button>
+            <button class="btn-num" onclick="appendValue('2')">2</button>
+            <button class="btn-num" onclick="appendValue('3')">3</button>
+            <button class="btn-op" onclick="appendValue('-')">-</button>
+            </div>
+            </div>
+            </body>
+            </html>

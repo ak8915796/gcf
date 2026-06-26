@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f7f6; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+        button { background: #28a745; color: white; padding: 10px; border: none; width: 100%; cursor: pointer; font-size: 16px; }
+        #output { margin-top: 15px; font-weight: bold; padding: 10px; border-radius: 4px; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Student Result System</h2>
+    <label>Subject 1 Marks:</label><input type="number" id="s1" min="0" max="100">
+    <label>Subject 2 Marks:</label><input type="number" id="s2" min="0" max="100">
+    <label>Subject 3 Marks:</label><input type="number" id="s3" min="0" max="100">
+    <label>Subject 4 Marks:</label><input type="number" id="s4" min="0" max="100">
+    <label>Subject 5 Marks:</label><input type="number" id="s5" min="0" max="100">
+    <button onclick="calculateResult()">Calculate Result</button>
+    <div id="output"></div>
+</div>
+
+<script>
+function calculateResult() {
+    let m1 = parseFloat(document.getElementById('s1').value);
+    let m2 = parseFloat(document.getElementById('s2').value);
+    let m3 = parseFloat(document.getElementById('s3').value);
+    let m4 = parseFloat(document.getElementById('s4').value);
+    let m5 = parseFloat(document.getElementById('s5').value);
+
+    if([m1, m2, m3, m4, m5].some(isNaN)) {
+        document.getElementById('output').innerHTML = "Please enter marks for all fields.";
+        return;
+    }
+
+    let total = m1 + m2 + m3 + m4 + m5;
+    let percentage = total / 5;
+    let isPassed = (m1 >= 35 && m2 >= 35 && m3 >= 35 && m4 >= 35 && m5 >= 35);
+    
+    let grade = "Fail";
+    if (isPassed) {
+        if (percentage >= 90) grade = "A";
+        else if (percentage >= 75) grade = "B";
+        else if (percentage >= 50) grade = "C";
+        else grade = "Pass";
+    }
+
+    let outDiv = document.getElementById('output');
+    outDiv.className = isPassed ? "pass" : "fail";
+    outDiv.innerHTML = `Total: ${total} <br> Percentage: ${percentage}% <br> Grade: ${grade} <br> Status: ${isPassed ? "PASSED" : "FAILED"}`;
+}
+</script>
+</body>
+</html>

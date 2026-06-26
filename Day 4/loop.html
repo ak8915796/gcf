@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+    <link rel="stylesheet" href="style.css"></head>
+<body>
+
+    <h1>GCF</h1>
+    <script>
+        let person={
+
+        
+        name : "ayush",
+        age:"20",
+        city :"patna"
+
+        }
+     
+console.log(person);
+        let count = 0;
+        for ( let key in person){
+            count++;
+
+        }
+        console.log(count);
+        for(let key in person ){
+            console.log(key+ ":" +person[key])
+        }
+
+         
+    
+
+
+        for(let i = 1; i<=10; i+=2){
+            console.log(i)
+        }
+
+        let fruits = [ 'apple','orange','mango']
+        for(item in fruits){
+            console.log(item);
+        }
+        let student ={
+            name :"abhi",
+            age :"20",
+            city: "patna"
+        }
+        for(let key in person.city){
+            console.log(key, student.city[key]);
+        }
+
+      
+
+        const numbers = [44,9,25];
+        let txt="";
+        for (let x in numbers){
+            txt += numbers[x];
+        }
+        console.log(txt);
+
+
+        let fruit=["orange", "apple","mango"]
+        fruit.forEach(item => console.log(item));
+
+       
+    </script>
+</body>
+</html>

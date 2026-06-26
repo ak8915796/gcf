@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>good morning everyone </title>
+</head>
+<body>
+    <h1 id="heading">Welcom to JAvascript DOM</h1>
+ 
+       <p class="text">para1</p>   <p class="text">para 2 </p>   <p class="text">para3</p>
+
+       <h2>HTML</h2>
+       <h2>CSS</h2>
+       <h2>Javascript</h2>
+
+
+       <input type="text" name="username" placeholder="Enter your name: ">
+       <br>
+       <br>
+       <button onclick="runDOM()">Run ALL DOM Methods</button>
+       <div class="box" id="output"></div>
+    <script>
+        // document.getElementById("demo").innerHTML = "Welcom to DOM";
+
+
+        function runDOM(){
+//getElementById()
+       let headings = document.getElementById("heading");
+         heading.innerHTML="getElementById() Executed";
+
+         heading.style.color = "red";
+
+         let para = document.getElementByIdClassname("text");
+         for(let i = 0;i<para.length;i++);
+         para[i].style.color = "blue";
+         para[i].style.fontsize= "25px";
+
+        }
+    </script>
+    
+</body>
+</html>

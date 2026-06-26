@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try{
+            let num=10/0;
+            console.log(num);
+        }
+        catch(error){
+            console.log("error occured");
+        }
+        try{
+            console.log("Try Block");
+
+        }
+        catch(error){
+            console.log("Catch Block")
+        }
+        finally{
+            console.log("Always Runs/executes");
+        }
+        let age= 19;
+        try{
+            if(age<18){
+                throw "not eligible";
+            }
+            console.log("Eligible");
+        }
+        catch(error){
+            console.log(error);
+        }
+
+    </script>
+</body>
+</html>
