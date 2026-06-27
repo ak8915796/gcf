@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>Student_management_system</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1> Welcom to javascript...!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laborum sit aliquam! Repellat.</p>
-
-
-    <script>
-        var name = "Abhi";
-        var city = "Patna";
-        console.log(name);
-        console.log(city);
-        // var x = 10;
-        // var x = 20;
-        // let a = 23;
-       
-        // console.log("value of x: " +x);
-        // console.log("value of a: " +a);
-
-        // let num1 = 10;
-        // let name = "Amrit";
-        // let isTrue= true;
-        // let isFalse= false;
-        // let arr = [1,2,3,4,5];
-        // let obj = {name: "Amrit", city: "Vadodra"}
-        var x = 10;
-        var x = 50;
-        let a = 23;
-        a = 67;
-        const b = 100;
-        console.log(b);
-        console.log("value of x: " +x)
-        console.log("value of a: " +a)
-        var num1 = 10;
-        console.log(num1);
-        console.log(typeof num1);
-
-        var name = "amrit";
-        console.log(name);
-        console.log(typeof name);
-        var isTrue = true;
-        console.log(isTrue);
-        console.log(typeof isTrue);
-
-
-        console.log(typeof undefined);
-        console.log(typeof null);
-
-
-        console.log(null === undefined);
-        console.log(null == undefined);
-        console.log("abc"-23);
-
-
-    </script>
-</body>
-</html>
-
-      
+    <script src="script.js"></script>
+   <div class="container">
+    <h1>Student Management System</h1>
+    <form id="studentForm">
+        <input id="name" placeholder="Name" required>
+        <input id="age" type="number" placeholder="Age"required>
+        <input id="course" placeholder="Course" required>
+        <button type="submit">Save Student</button>
+    </form>
+    <div class="toolbar">
+        <input id="search" placeholder="Search">
+        <select id="sort">
+            <option value="">Sort</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+            <option value="age">Age</option>
+        </select>
+    </div>
+    <p>Total Students: <span id="count">0</span></p>
+    <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                        <th> Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </body>
+    </html>
